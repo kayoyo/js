@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>잭팟게임</title>
+
+    <style>
+
+        .container {width: 650px; margin: 30px auto;}
+        .info > p {font-weight: bold; font-size: 15px; color: blue;}
+        .game {margin: 30px auto;}
+        #cash {height: auto; line-height: normal; padding: .3em .3em;}
+        #playbtn {height: auto; line-height: normal; padding: .3em .3em;}
+     
+
+    </style>
+
+    <!-- 배팅 금액을 입력하지 않으면 경고를 알려준다. 배팅금액을 입력 해야만 게임이 시작된다
+
+         주사위는 각각 난수를 만들어 버튼을 누를 때 이미지와 함께 나타 내도록 한다
+
+         같은 숫자에 따라 3개면 10배, 2개면 2배의 상금을 주도록 한다
+
+         배팅 결과를 주사위 이미지 아래에 출력한다
+
+         돈은 천단위 구분 기호를 출력 하도록 한다
+
+         배팅 금액의 입력 상자는 빈문자열로 리셋 되도록 한다. -->
+
+</head>
+
+<body>
+
+        <div class = "container">
+
+            <h1>잭팟게임</h1>
+
+            <div class="info">
+
+                <img src='image/dice_info.png'>
+
+                <p>주사위를 던져주세요</p>
+
+                <p>같은 숫자 3개만 배팅 금액의 10배</p>
+                <p id='cost'></p>
+
+            </div>
+
+            <div class="btn">
+
+                <label>금액</label>
+
+                <input type="text" id="cash" placeholder="숫자만 입력 가능">
+
+                <button onclick="play()" id="playbtn">play</button>
+
+            </div>
+
+            <div class="game">
+
+                <img src="" id="dice1">
+
+                <img src="" id="dice2">
+
+                <img src="" id="dice3">  
+
+            </div>
+
+            <div class="gameResult">
+
+                <h3 id = "result"></h3>
+
+            </div>
+
+    <script>
+
+            var cash;
+            var totalCash;
+        
+            // function aaaa(aaa) {
+               
+            // }
+            // aaaa(cash);
+
+            function numberFormat(inputNumber) { //금액을 천단위로 찍어주는 함수 :  호출할 때 numberFormat(변경할 변수)
+            return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          
+            }
+            
+            function play() {
+
+            cash = document.querySelector('#cash').value;
+            document.querySelector('#cost').innerHTML = "배팅금액 " + numberFormat(cash)  + "원";
+
+            var inputCash = document.getElementById('cash').value;
+
+            if(inputCash == 0){
+
+                alert('금액을 입력 해 주세요')
+
+                location.reload();
+
+            } else  {
+
+            var player1 = parseInt((Math.random()*6)+1);
+
+            document.querySelector('#dice1').setAttribute('src', 'image/dice_' + player1 + '.png');
+
+       
+
+            var player2 = parseInt((Math.random()*6)+1);
+
+            document.querySelector('#dice2').setAttribute('src', 'image/dice_' + player2 + '.png');
+
+        
+
+            var player3 = parseInt((Math.random()*6)+1);
+
+            document.querySelector('#dice3').setAttribute('src', 'image/dice_' + player3 + '.png');
+
+
+            if(player1 == player2 && player1 == player3 && player2 == player3){
+
+                document.querySelector('#result').innerHTML = "잭팟!!!!!!!!!!!!  배팅금액의 10배 획득<br>" + numberFormat(inputCash*10) + "원"; 
+
+                document.getElementById('cash').value="";
+
+            } else if ( player1 == player2 ||  player1 == player3 || player2 == player3){
+
+                document.querySelector('#result').innerHTML = "배팅금액의 2배 획득<br>" +  numberFormat(inputCash*2) + "원"; 
+
+                document.getElementById('cash').value="";
+
+            } else if (player1 != player2 || player1 != player3 || player2 != player){
+
+                document.querySelector('#result').innerHTML="다시 한번 더 도전해 주세요"
+                document.getElementById('cash').value="";
+
+            } 
+
+        } 
+
+    } 
+
+         
+
+        
+
+    </script>
+
+    </div>
+
+</body>
+
+</html>

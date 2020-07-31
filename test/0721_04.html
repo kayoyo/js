@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4번 문제</title>
+    <!-- 입력창으로 부터 정수를 입력 받아서 출력
+    입력창 : 정수 입력 
+    출력 : 1에서 부터 입력받은 정수까지 출력, 홀수 일 때는 글자색을 빨간색, 짝수 일때는 글자색을 파란색 -->
+    <style>
+       
+        .red {color: red;}
+        .blue {color: blue;}
+    </style>
+</head>
+<body>
+    <script>
+        var input = prompt("정수를 입력하세요");
+        var i=1;
+
+        for(var i=1; i<input; i++){
+            if(i % 2 == 0){ 
+                document.write("<span class='blue'>" + i + " </span>");
+            } else { 
+                document.write("<span class='red'>" + i + " </span>");
+            } 
+        }
+
+        // while(i <= input){
+        //     if(i % 2 == 0){ 
+        //         document.write("<span class='blue'>" + i + " </span>");
+        //     } else { 
+        //         document.write("<span class='red'>" + i + " </span>");
+        //     }
+        //     i++;
+        // } 
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4번 문제</title>
+    <!-- 입력창으로 부터 정수를 입력 받아서 그 수가 3의 배수이면서, 4의 배수인지를 확인
+    입력창 : 정수를 입력하세요 / 브라우저 출력 : 3의 배수이면서 4의 배수 입니다. 또는 3의 배수가 아니면서 4의 배수도 아닙니다.   -->
+</head>
+<body>
+    <script>
+        var number = prompt("정수를 입력하세요");
+        
+        if(number%3==0 && number%4==0) {
+            document.write(number + " 는 3의 배수 이면서 4의 배수 입니다.")
+        } else {
+            document.write(number + " 는 3의 배수도 4의 배수도 아닙니다.")
+
+
+        // if(number%3==0 && number%4==0) {
+        //     document.write(number + " 는 3의 배수 이면서 4의 배수 입니다.")
+        // } else if(number%3==0) {
+        //     document.write(number + " 는 3의 배수 이면서 4의 배수가 아닙니다.")
+        // } else if(number%4==0) {
+        //     document.write(number + " 는 4의 배수 이면서 3의 배수가 아닙니다.")
+        // } else {
+        //     document.write(number + " 는 3의 배수도 4의 배수도 아닙니다.")
+        // }
+
+    </script>
+</body>
+</html>

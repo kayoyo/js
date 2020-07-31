@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <h3>연산자</h3>
+    <p>
+        6. 조건 선택 연산자(삼항 연산자) : (condition ? true : false)<br>
+        - 조건에 대해서 true 일 때와 false 일 때 다르게 실행하는 연산자<br>
+        - 간단한 if-esle문의 대용으로 사용<br>
+    </p>
+    <h3>연산자의 우선 순위</h3>
+    <p>
+       1. 단항연산자(++, --, !)<br> 
+       2. 산술연산자 (*, /, %, +, -)<br> 
+       3. 비교연산자(>, >=, <, <=, ==, !=, ===, !==)<br>
+       4. 논리연산자(&&, ||)<br> 
+       5. 삼항연산자(condition ? true : false)<br> 
+       6. 대입연산자(=, +=, -+, *=, /= )<br>   
+    </p>
+
+    <script>
+        //조건 선택 연산자
+        var age=prompt("당신의 나이를 입력하세요");
+        var result;
+        //if문
+        // if(age >= 20) {
+        //     result = "성인"
+        //     document.write("당신은" + result + "입니다");
+        // } else {
+        //     result = "청소년"
+        //     document.write("당신은" + result + "입니다");
+        // }
+        //삼항연산자
+        result = age >=20 ? "성인" : "미성년";
+        document.write("당신은" + result + "입니다")
+
+    </script>
+</body>
+</html>

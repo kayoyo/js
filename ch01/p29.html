@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">자바스크립트</h1>
+        <p id="text">위 텍스트를 클릭해 보세요</p>
+    </div>
+    <!-- id와 class 선택자 선택 함수 querySelector -->
+    <script>
+        var heading = document.querySelector('#heading');
+        heading.onclick = function() {
+            heading.style.color = "red"
+        }
+    </script>
+    <!-- <script>
+        var age = prompt("당신의 나이는?","0")
+        if(age >=20) {
+            document.write("당신은 성인입니다");
+        } else {
+            document.write("당신은 미성년자 입니다");
+        }
+    </script> -->
+</body>
+</html>

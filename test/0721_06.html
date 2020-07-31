@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6번 문제</title>
+    <!-- 입력창으로 부터 정수를 입력 받아서 약수를 출력하고, 약수, 약수의 개수, 약수의 합 출력
+    입력창 : 정수입력 -->
+</head>
+<body>
+    <script>
+        var input = prompt("정수를 입력 해 주세요");
+        var sum=0;
+        var count=0;
+        var aliquot=[];
+        
+        for(var i=1; i<=input; i++){
+            if(input % i==0){
+                aliquot.push(i);
+                sum += i;
+                count ++;
+            }
+            
+        } document.write("약수 : " + aliquot + "<br>" + "약수의 개수 : " + count + "개" + "<br>" + "약수의 합계 : " + sum);
+        
+    </script>
+    
+</body>
+</html>

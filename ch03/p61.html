@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문(제어문) - if</title>
+</head>
+<body>
+    <h3>조건문, 제어문</h3>
+    <p>
+        - if문의 활용<br>
+        - 조건의 결과는 true or false<br>
+        1. if(조건)문 : 조건에 따른 결과가 1가지 일 때 사용법<br>
+        2. if(조건) ~ else문 : 조건에 따른 결과가 2가지 일 때 사용<br>
+        3. if(조건) ~ else if(조건) ~ else문 : 조건에 따른 결과가 3가지 이상일 때 사용<br>
+    </p>
+  <script>
+      var number = Number(prompt("정수를 입력하세요"));
+      //if문 사용 : 조건에 따른 결과가 1가지 일 때
+      if(number > 0){
+          document.write(number + "은 양수입니다.")
+      }
+      //if ~ else문 : 조건에 따른 결과가 2가지 일 때
+      if(number > 0){
+        document.write(number + "은 양수입니다.")
+      } else {
+          document.write(number + "은 음수입니다.")
+      }
+      //if ~ else if ~ else문 : 조건에 따른 결과가 3가지 이상일 때
+      if(number > 0){
+        document.write(number + "은 양수입니다.")
+      } else if(number < 0){
+          document.write(number + "은 음수입니다.")
+      } else {
+        document.write(number + " 입니다.")
+      }
+
+  </script>  
+</body>
+</html>

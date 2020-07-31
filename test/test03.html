@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3번</title>
+    <!-- 1. 확인창으로 부터 메세지를 전달받아 전등의 점등/소등 여부를 변수에 저장
+         2. 그 값으로 부터 전등의 점등/소등 여부를 브라우저 화면에 메세지와 함께 이미지를 출력 -->
+
+            
+</head>
+<body>
+    <script>
+         var answer = confirm("전등을 켜드릴까요?");
+        if(answer == true){
+            document.write("점등" + "<img src='lighton.png' width='30%''>");
+        } else {
+            document.write( "소등" + "<img src='lightoff.png' width='30%'>");
+        }
+    </script>
+</body>
+</html>

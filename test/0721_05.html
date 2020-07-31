@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5번 문제</title>
+    <!-- 입력창으로 부터 정수를 입력받아서 입력받은 수의 팩토리얼을 출력
+    입력창 : 정수입력
+    출력창 : 5! = 5 * 4 * 3 * 2 * 1 = 120  -->
+</head>
+<body>
+    <script>
+        var input=Number(prompt("정수를 입력하세요"));
+        
+        var factorial = 1; //곱할 때는 1이 초기화 값
+
+            document.write("팩토리얼 : " + " 5!=")
+
+        for(var i=input; i>0; i--){ // 5 4 3 2 1
+            if(i == 1){ 
+                document.write(i+"<br>");
+            } else {
+                document.write(i + "*");
+                factorial *= i;
+            }   
+        } document.write("합계 : " + factorial);    
+
+    </script>
+    
+</body>
+</html>

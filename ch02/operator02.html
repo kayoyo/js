@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자(operator)</title>
+</head>
+<body>
+    <h3>연산자(operator)</h3>
+    <p>
+        3. 비교 연산자 : >, >=, <, <=, ==(equal), !=(not equal), ===, !== <br>
+        - ==, != : 값만 비교해서 true 또는 false를 출력 <br>
+        - ===, !== : 값과 데이터 타입을 모두 비교해서 true 또는 false를 비교 <br>
+        - 우선순위 : 첫번째 >, >=, <, <= 두번째 ==, != 세번째 ===, !== <br> 
+        
+        4. 논리 연산자 : &&(논리곱 AND) || (논리합 OR) !(논리 부정 NOT) <br>
+        - 논리연산자의 결과는 논리값(true or false) <br>
+        - 비교연산자 > 논리연산자<br>
+        - 우선순위 : ! > && > ||<br>
+        
+        5. 대입연산자 : = <br>
+        - 복합대입연산자(할당연산자 assignment) : +=, -=, *=, /=, %= <br>
+
+    </p>
+    <script>
+        var a = "10", b = 10;
+        console.log(a);
+        console.log(typeof a);
+        console.log(b);
+        console.log(typeof b);
+        
+        //값만 비교 : 문자열의 값을 꺼내서 비교 
+        console.log("a == b : " + (a == b)); //true
+        //값과 데이터 타입을 비교 : 둘중 하나라도 다르면 false, 둘다 같으면 true
+        console.log("a === b : " + (a === b)); //false
+
+        //값만 비교 : a=10과 b=10의 값이 같지 않냐고 물어서 false
+        console.log("a != b : " + (a != b)); 
+        //값과 데이터 타입을 비교 : a=10과 b=10의 값이 같지 않냐와 타입이 같지 않냐고 물어서 값은 같으나 타입이 달라서 false
+        console.log("a !== b : " + (a !== b));
+        //논리연산자 && || !
+        var x=30, y=10;
+        var z= x > 20 && y < 20;
+        console.log(z); // && 사이의 조건이 다 true 일 때 결과는 true, 하나라도 false 이면 결과 false 
+        console.log(x >20 || y<20); // || 사이의 조건이 하나라도 true 이면 결과는 true, 조건이 다 false이면 결과는 false  
+        //! : true > false, false > true
+        var z = true;
+        console.log(!z);//false
+        console.log(!30);//false : 0을 제외한 모든 숫자는 true인데 !을 붙여줘서 false
+        console.log(!"javascript");//false : 모든 문자열은 true인데 !을 붙여줘서 false  
+        
+        //대입, 복합대입연산자 : = += -= /= %=
+        a = 10;
+        a += 5; //a변수에 5를 더해서 대입하라는 의미
+        console.log(a);//15
+
+        a *= 2; //a변수에 2를 곱해서 대입하라는 의미
+        console.log(a);//30
+
+        ++a; console.log(a);//31
+        a++; console.log(a);//32
+        a = a + 1; console.log(a)//33
+        a += 1; console.log(a)//34
+
+
+    </script>
+</body>
+</html>

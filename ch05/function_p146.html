@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역함수와 지역 함수의 차이</title>
+</head>
+<body>
+    <script>
+        //전역함수
+        function myFnc() {
+            alert("전역함수");
+        }
+        //지역함수
+        function outerFnc() {
+            function myFnc() {
+                alert("지역함수");
+            }
+            myFnc(); //지역함수 호출
+        }
+        outerFnc();
+        myFnc(); //전역함수 호출
+    </script>
+</body>
+</html>

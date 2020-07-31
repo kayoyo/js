@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6번 문제</title>
+    <!-- 월(month)를 입력 받아서 계절을 판별하는 프로그램
+    입력창 : 좋아하는 월을 입력 하세요 / 출력 : 3 ~ 5 봄, 6 ~ 8 여름, 9 ~ 11 가을, 12 ~ 2 겨울 + 메시지와 이미지 출력 예)3월은 봄입니다.   -->
+</head>
+<body>
+    <script>
+        var month = prompt("좋아하는 월을 입력하세요");
+        
+         if(month == 12 || month == 1 || month == 2){
+             document.write("<img src = 'winter.png'>" + month + "월은 겨울입니다.")
+         } else if(month <=5 && month >=3){
+            document.write("<img src = 'spring.png'>" + month + "월은 봄입니다.")
+         } else if(month <=8 && month >=6){
+            document.write("<img src = 'summer.png'>" + month + "월은 여름입니다.")
+         } else if(month <=11 && month >=9){
+            document.write("<img src = 'fall.png'>" + month + "월은 가을입니다.")
+         } else {
+            document.write("잘 못 입력 했습니다.")
+         } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형변환 함수</title>
+</head>
+<body>
+    <h3>형변환 함수</h3>
+    <p>데이터 타입(자료형)을 변환하는 함수</p>
+    <p>
+        1. String() : 숫자를 문자로 변환하는 함수<br>
+        2. Number() : 문자를 숫자로 변환하는 함수<br>
+        3. boolean() : 비논리형을 논리형으로 변환하는 함수<br>
+        - 논리형 ; true, false 둘 중의 하나<br>
+        - true : 0을 제외한 모든 숫자(정수, 실수), 문자열<br>
+        - false : 0, null, undefined<br>
+        - toString : 숫자를 문자로 변환 함수<br>
+        - parseInt : 문자를 정수로 변환 함수<br>
+        - parseFloat : 문자를 실수로 변환 함수<br>
+    </p>
+    <script>
+        var a = "10", b=20, c;
+        c= a + b; //문자 + 숫자 >> 문자열로 처리
+        console.log("결과 : " + c); //1020
+        console.log("데이터 타입 : "  + typeof c); //string
+
+        c = Number(a) + b; //연산하기 위해 a의 값을 숫자로 잠시 바꾼 것임, a의 값이 완전히 변경된 건 아니다.
+        console.log(c); // 30
+        console.log(typeof c); //number
+
+        a=Number(a); //a의 완전히 변경하기 위해서는 문자형인 a를 형변환하여 a에 대입해야 된다.
+        console.log(a); //10
+        console.log(typeof a); //number
+
+        var x ="ten";
+        x = Number(x);
+        console.log(x); //NaN(not a number)
+        console.log(typeof x); //number
+        
+        var y=100;
+        var z= String(y); 
+        console.log(z); //100
+        console.log(typeof z); //string
+
+        var h = Boolean("자바스크립트")
+        console.log(h); //true : 문자열은 참
+        console.log(typeof h);//boolean
+
+        h = Boolean(0);
+        console.log(h); //false : 숫자 0은 거짓
+        console.log(typeof h);//boolean
+
+        h = Boolean(3, 5);
+        console.log(h); //false : 숫자열 정수도 참
+        console.log(typeof h);//boolean
+
+        h = Boolean(-1);
+        console.log(h); //false : 숫자열 음수도 참
+        console.log(typeof h);//boolean
+
+        h = Boolean(null);
+        console.log(h); //false : null은 거짓
+        console.log(typeof h);//boolean
+
+        var j;
+        console.log(Boolean(j)); // false : undefined은 거짓
+        console.log(typeof j); //undefined
+
+        var v ="";
+        console.log(Boolean(v)); //""안에 공백이 하나라도 있으면 true, 공백이 없으면 false 
+        console.log(typeof v); //string
+        
+        //숫자를 문자로 변환
+        var aa= 10;
+        aa = aa.toString(aa);
+        console.log(aa); //10
+        console.log(typeof aa); //string
+        
+        //문자를 정수로 변환
+        var bb="30";
+        bb = parseInt(bb);
+        console.log(bb); //30
+        console.log(typeof bb); //number
+        
+        //문자를 실수로 변환
+        var cc="3.14";
+        cc = parseFloat(cc);
+        console.log(cc); //3.14
+        console.log(typeof cc); //number
+
+
+
+
+
+    </script>
+</body>
+</html>

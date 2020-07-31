@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜객체</title>
+</head>
+<body>
+    <script>
+        //월은 0 ~ 11로 출력됨
+        var date = new Date(2002, 4, 31)//5월 31일 출력
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+
+        document.write(year +"년"+ (month+1) +"월" + day + "일<br>");
+
+        var date2 = new Date(2020, 11, 31, 18, 32, 44)//12월 31일 18시 32분 44초 출력
+        var year2 = date2.getFullYear();
+        var month2 = date2.getMonth();
+        var day2 = date2.getDate();
+        
+        var hour = date2.getHours();
+        var minute = date2.getMinutes();
+        var second = date2.getSeconds();
+
+        document.write(year2 +"년"+ (month2+1) +"월" + day2 + "일" + hour + "시" + minute + "분" + second + "초<br>");
+        
+        //setter
+        var date3 = new Date();
+        date3.setFullYear(2020);
+        date3.setMonth(6);
+        date3.setDate(27);
+        date3.setHours(14);
+        date3.setMonth(49);
+        date3.setSeconds(45);
+
+        //getter
+        var year3 = date3.getFullYear();
+        var month3= date3.getMonth();
+        var day3 = date3.getDate();
+
+        var hour2 = date3.getHours();
+        var minute2 = date3.getMinutes();
+        var second2 = date3.getSeconds();
+
+        document.write(year3 +"년"+ (month3+1) +"월" + day3 + "일" + hour2 + "시" + minute2 + "분" + second2 + "초<br>");
+        </script>
+</body>
+</html>

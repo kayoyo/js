@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 5</title>
+    <!-- 
+        1. 변수 선언 : var 
+        ** 변수의 중복 선언 가능 : 똑같은 이름으로 변수를 여러 개 선언하게되면 심각한 문제를 야기함
+                             (JavaScript에서는 변수가 함수 범위(function scope)를 갖고 호이스팅에 의해 선언이 끌어올려지므로, 실제로 함수 내에서 하나로 유지됨)
+        2. 변수 선언 : let
+        ** 변수의 중복 선언 불가 : 값의 변경 가능
+
+        3. 변수 선언 : const
+        ** 변수의 중복 선언 불가, 값을 재할당 하는 것도 불가
+        ** 상수의 선언과 같다(한번 선언하고, 값을 할당하면 바꿀 수 없음)
+
+        4. 이러한 문제점을 생산하기 위해 ES6버전부터 let, const로 구분해서 사용하고 있다. 
+    -->
+</head>
+<body>
+    <script>
+        //var
+        var maxScore = 90;
+        document.write("최고점수 : " + maxScore + "<br>");
+        var maxScore = 120;
+        document.write("최고점수 : " + maxScore + "<br><hr>");
+
+        //let
+        let minScore = 50;
+        document.write("최저점수 : " + minScore + "<br>");
+        let minScore = 60; //변수의 중복 선언 불가
+        document.write("최저점수 : " + minScore + "<br><hr>");
+
+        //const
+        const bagicScore = 80;
+        document.write("기준점수 : " + bagicScore + "<br>");
+        bagicScore = 90; //값이 할당되면 바꿀 수 없다.
+        document.write("기준점수 : " + bagicScore + "<br>");
+
+    </script>
+</body>
+</html>

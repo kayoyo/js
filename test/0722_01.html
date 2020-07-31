@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 1번</title>
+    <!-- 입력창으로 부터 정수를 입력받아서 7의 배수만 제외하고 출력
+    입력 : 정수를 입력하세요
+    출력 : 15 입력시 7의 배수는 제외하고 출력되도록 -->
+</head>
+<body>
+    <script>
+
+        var input=Number(prompt("정수를 입력하세요"));
+
+        for(var i =1; i<=input; i++){
+            if(i % 7 == 0 ) continue;{
+                document.write(i + " ");
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4번 문제</title>
+    <!-- 구구단을 2단 부터 9단까지 한번에 브라우저 출력 -->
+    <style>
+        .box {border: 1px solid black; width: 115px; height: 360px; 
+              line-height: 30px; padding-left: 25px; font-size: 20px;
+              display: inline-block; position: relative; margin-right: 20px; background-color: lightgray}
+        .container {margin: 0 auto;  width: 1300px;}
+        h3 {padding-left: 20px;}
+        h1 {text-align: center; margin-top: 5%; margin-bottom: 5%;}
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h1>구구단</h1>
+    <script>
+        var sum=0;
+
+        for(var i=2; i<=9; i++){ 
+            document.write("<div class='box'>")
+                document.write("<h3>"+ i + "단" +"</h3>")
+            for(var j=1; j<=9; j++){
+                sum = i * j;
+                document.write( i + " * " + j + " = " + sum + "<br>")        
+            }
+                document.write("</div>");
+            } 
+    </script>
+    </div>
+</body>
+</html>

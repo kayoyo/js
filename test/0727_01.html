@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 사용 방법</title>
+    <style>
+        .container {width: 800px; margin: 30px auto;}
+         h1, h3 {text-align: center;}
+        .content1 {width: 600px; margin: 0 auto;}
+        .content1 > img {float: left; margin-right: 40px;}
+        .content1 ul {list-style: none; padding-top: 40px;}
+        .content1 ul li {margin-bottom: 20px; margin-top: 25px;}
+        .content1 li label {width: 80px; float: left; text-align: right; margin-right: 10px;}
+        .content1 li input {width: 125px; padding: 5px 10px}
+        .content1 li button {width: 150px; height: 35px; margin-left: 20px; background-color: black; color: white; border: none; font-size: 0.9em;}
+        .content1 li:nth-child(3) {text-align: center;}
+        #result {clear: both; margin-left: 120px; margin-top: 50px; line-height: 30px;}
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <h1>코리아 백화점</h1>
+        <h3>할인판매</h3>
+        <div class="content1">
+            <img src='sale.png' width="250px" alt="">
+            <ul>
+                <li>
+                    <label for="price">정가</label>
+                    <input type="text" id="price"> 원
+                </li>
+                <li>
+                    <label for="rate">할인율</label>
+                    <input type="text" id="rate"> %
+                </li>
+                <li>
+                    <button onclick="pay()">할인가격 계산하기</button>
+                </li>
+            </ul>
+        </div>
+        <div id="result"></div>
+    <script>
+        function pay(){
+            var cost = document.querySelector('#price').value;
+            var discount = document.querySelector('#rate').value;
+
+            var disPrice = cost * (discount/100) //예) 15000 * 0.1 = 1500원 할인
+            var salesPrice = cost - disPrice;
+            
+            //자바 스크립트를 활용한 유효성 검사 부분
+            if(cost == 0){
+                alert("가격을 입력 해 주세요!") 
+            } else if(rate == 0){
+                alert("할인율을 입력 해 주세요!")
+            } else {
+                var disPrice = cost * (discount/100); //예) 15000 * 0.1 = 1500원 할인
+                var salesPrice = cost - disPrice; 
+                // 알림창을 통한 확인
+                // alert("정가 : " + cost + "원\n할인율 : " + discount + "%\n판매가 : " + salesPrice); 
+                // 브라우저를 통한 확인① 
+                // document.write("정가 : " + cost + "원<br>할인율 : " + discount + "%<br>판매가 : " + salesPrice);
+                //브라우저를 통한 확인②
+                document.querySelector('#result').innerHTML = "정가 : " + cost + "원<br>할인율 : " + discount + "%<br>판매가 : " + salesPrice;
+            }
+
+        }
+        
+
+    </script>
+    </div>
+</body>
+</html>

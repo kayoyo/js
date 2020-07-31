@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 객체</title>
+</head>
+<body>
+    <script>
+        var date1 = new Date();//날짜의 정보를 제공하는 Date객체 생성
+        
+        var year = date1.getFullYear();//년
+        var month = date1.getMonth();//월
+        var day = date1.getDate();//일
+
+        var hour = date1.getHours(); //24시간 기준
+        var minute = date1.getMinutes();//분
+        var second = date1.getSeconds();//초
+        var millisecond = date1.getUTCMilliseconds();//1000qnsdml 1초
+
+        document.write(date1 + " → 외국식 날짜 표기<br>");//현재 시스템의 날짜 정보를 확인,
+        document.write(year + "년" + (month+1) + "월" + day + "일<br>");
+        document.write(hour + "시" + minute + "분" + second + "초(" + millisecond+")"+ "<br>");
+        
+        // 1. 요일을 확인하는 방법(배열)
+        var week = date1.getDay();//요일 0~6
+        var weekDay = ["일", "월", "화", "수", "목", "금", "토"];
+        document.write(weekDay[week] + "요일<br>"); 
+        
+        // 2. 요일을 확인하는 방법(switch문)
+        var weekDay2
+        switch(week){
+            case 0: weekDay2="일"; break;
+            case 1: weekDay2="월"; break;
+            case 2: weekDay2="화"; break;
+            case 3: weekDay2="수"; break;
+            case 4: weekDay2="목"; break;
+            case 5: weekDay2="금"; break;
+            case 6: weekDay2="토"; break; 
+        }
+        document.write(weekDay2 + "요일<br>");
+    </script>
+</body>
+</html>

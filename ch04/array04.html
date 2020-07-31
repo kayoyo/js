@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hospital_playlist</title>
+    <style>
+        .container {width: 1000px; margin: 0 auto;}
+        table, tr, th, td {border: 1px solid black; border-collapse: collapse; text-align: center;}
+        th {width: 150px; background-color: cadetblue;}
+        tr {line-height: 50px;}
+        h1 {text-align: center; margin: 50px; padding-right: 8%;}      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>슬기로운 의사생활</h1>
+        
+    <script>
+         var weekTime=0;
+         var avgweekTime=0;
+         var dactor = new Array(
+                          Array("이익준", "간담췌외과", 4, 8 ), 
+                          Array("양석형", "산부인과", 2, 1 ),
+                          Array("채송화", "신경외과", 13, 15 ),
+                          Array("안정원", "소아외과", 3, 5 ),
+                          Array("김준완", "흉부외과", 10, 19 ),
+                                );
+
+            document.write("<table>");
+            document.write("<tr>");
+            document.write("<th>의사이름</th>", "<th>진료과</th>", "<th>수술시간(오전)</th>", "<th>수술시간(오후)</th>", "<th>누적시간</th>", "<th>평균시간</th>");
+            document.write("</tr>");
+            
+            for(var i=0; i<dactor.length; i++){
+                document.write("<tr>")
+                for(var j=0; j<dactor[i].length; j++){
+                    if (j == 2){
+                        weekTime += dactor[i][j];
+                    } else if (j == 3){
+                        weekTime += dactor[i][j];
+                    }
+                    document.write("<td>" + dactor[i][j] + "</td>");
+                    }     
+                    avgweekTime=weekTime/2;
+                    document.write("<td>" + weekTime + "</td>");
+                    document.write("<td>" + avgweekTime + "</td>");
+                    document.write("</tr>")
+                    weekTime=0
+                    avgweekTime=0;
+                    }
+                    document.write("</table>");
+    </script>
+    </div>
+    
+</body>
+</html>

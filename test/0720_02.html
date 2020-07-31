@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2번 문제</title>
+    <!-- 입력창으로 부터 가위 or 바위 or 보 중에서 하나를 입력받아 브라우저에 해당 이미지를 출력  
+         기본값 : 가위-->
+</head>
+<body>
+    <script>
+        var input = prompt("가위 / 바위 / 보 중에서 하나만 입력해 주세요");
+
+        if(input == "가위"){
+            document.write("<img src='math_img_1.jpg' width='30%'>" + "가위")
+        } else if(input == "바위"){
+            document.write("<img src='math_img_2.jpg' width='30%'>" + "바위")
+        } else if(input == "보"){
+            document.write("<img src='math_img_3.jpg' width='30%'>" + "보")
+        } else {
+            document.write("<img src='math_img_1.jpg' width='30%'>" + "가위")
+        }
+
+        // switch(input){
+        //     case "가위" : "<img src = 'math_img_1.jpg' width='30%'>";
+        //     break;
+        //     case "바위" : "<img src = 'math_img_2.jpg' width='30%'>";
+        //     break;
+        //     case "보" : "<img src = 'math_img_3.jpg' width='30%'>";
+        //     break;
+        //     default : "가위";
+     
+        // }
+
+    </script>
+</body>
+</html>

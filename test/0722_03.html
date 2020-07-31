@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제3번</title>
+    <style>
+        /* table {border: 1px solid black; border-collapse: collapse;}
+        p {font-size: 10px;} */
+
+        .container {width: 1000px; margin-left:30%;}
+        .box {display: inline-block; position: relative; font-size: 10px; margin-right: 20px;}
+        h3 {padding-left: 25%;}
+        p {text-align: center;}
+        
+       
+        
+        </style>
+</head>
+<body>
+    <div class = "container">
+        <h3>월별 탄생석</h3>
+
+    <script>
+        // var cnt=1;
+        // var cnt2=0;
+        // var stones = ["1월 / 가넷 / 사랑,진실", "2월 / 자수정 / 평화,성실", "3월 / 아쿠아마린 / 총명,용감",
+        //              "4월 / 다이아몬드 / 영원한사랑", "5월 / 에메랄드 / 행복,행운" , "6월 / 진주 / 건강,부귀",
+        //               "7월 / 루비 / 영원한생명,열정,용기", "8월 / 감람석 / 지혜,부부의행복", "9월 / 사파이어 / 지혜,불변",
+  
+        //              "10월 / 오팔 / 희망,순결", "11월 / 토파즈 / 우정,인내", "12월 / 터키석 / 성공,승리" ]
+        // document.write("<table>")
+        // for(var i=1; i<=3; i++){
+        //     document.write("<tr>");
+        //         for(var j=1; j<=4; j++){ 
+        //         document.write("<td>" + "<img src='stone0"+ (cnt++) + ".png'>");
+        //         document.write("<p>"+ stones[cnt2++]+"</p></td>")
+        //         }  document.write("</tr>");
+        //     } document.write("</table>");
+     
+        var img=1;
+        var text=0;
+        var stone = ["1월 / 가넷 / 사랑,진실",
+                     "2월 / 자수정 / 평화,성실",
+                     "3월 / 아쿠아마린 / 총명,용감",
+                     "4월 / 다이아몬드 / 영원한사랑",
+                     "5월 / 에메랄드 / 행복,행운",
+                     "6월 / 진주 / 건강,부귀",
+                     "7월 / 루비 / 영원한생명,열정,용기",
+                     "8월 / 감람석 / 지혜,부부의행복",
+                     "9월 / 사파이어 / 지혜,불변",
+                    "10월 / 오팔 / 희망,순결",
+                    "11월 / 토파즈 / 우정,인내",
+                    "12월 / 터키석 / 성공,승리"];
+                   
+                for(var i = 1; i<=4; i++){
+                        document.write("<div class = 'box'>")
+                    for(var z=1; z<=3; z++){
+                        document.write("<img src='stone0" + (img++) + ".png'>");
+                        document.write("<p>"+ stone[text++]+"</p>");
+                    }
+                        document.write("</div>")
+                    
+                } 
+    </script>
+    </div>
+</body>
+</html>
