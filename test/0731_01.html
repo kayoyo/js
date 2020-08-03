@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,-scale=1.0">
+    <title>밀리의 서재</title>
+    <style>
+        .container {width: 600px; margin: 0 auto; }
+        .bar {text-align: center; margin-bottom: 50px; margin-top: 30px; 
+              background-color: rebeccapurple; color: white; padding: 10px;}
+        ul.list li {list-style: none; 
+               margin-bottom: 10px; padding: 5px 0px 5px 5px; max-width: 250px; width: 100%;
+               border-bottom: 1px dotted gray; font-size: 15px; }
+        ul.list li::before {content:">"; display:inline-block; padding: 0px 5px 6px 0px;}
+        .content, ul.list, li {margin-left: 40px;}
+        #conBtn {margin-left: 30px; margin-right: 25px;}
+        #conBtn, #delBtn {border: 1px solid purple; border-radius: 5px;
+                          background-color: rgba(0,0,0,0); color: purple; padding: 7px; cursor: pointer}
+        #conBtn:hover, #delBtn:hover {color: white; background-color:purple;}
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bar">
+            <h1>밀리의 서재</h1>
+        </div>
+        <div class="content">
+            <ul class="list">
+            <li>오만과 편견<button id="conBtn" onclick="conPage(1)">확인</button><button id="delBtn" onclick="delPage(1)">삭제</button></li>   
+            <li>노인과 바다<button id="conBtn" onclick="conPage(2)">확인</button><button id="delBtn" onclick="delPage(2)">삭제</button></li> 
+            <li>레미제라블 <button id="conBtn" onclick="conPage(3)">확인</button><button  id="delBtn" onclick="delPage(3)">삭제</button></li>
+            <li>전쟁과 평화<button id="conBtn" onclick="conPage(4)">확인</button><button id="delBtn" onclick="delPage(4)">삭제</button></li>    
+            </ul> 
+        </div>
+        </div>
+    <script>
+
+        function Book(title, author, volume, price){
+            this.title = title;
+            this.author = author;
+            this.volume = volume;
+            this.price = price;
+        }
+
+        Book.prototype.getDetail = function (){
+            return "책제목 : " + this.title+ "\n" + "작가 : " + this.author + "\n" + "분량 : " + this.volume +"\n" + "판매가격 : " + this.price;
+        }
+
+        // var info1;
+        // var info2;
+        // var info3;
+        // var info4;
+
+    
+
+        var bookList = [ new Book("오만과 편견", "이익준" , "300 페이지", "30000원"),
+                         new Book("노인과 바다", "김준완" , "350 페이지", "25000원"),
+                         new Book("레미제라블", "양석형" , "440 페이지", "20000원"),
+                         new Book("전쟁과평화", "안정원" , "200 페이지", "18000원"),
+                       ];
+
+        var info = new Array(4); //0123
+            
+        for(var i=0; i<bookList.length; i++){
+                info[i] = bookList[i].getDetail();
+            } 
+        //    info1 = bookList[0].getDetail();
+        //    info2 = bookList[1].getDetail();
+        //    info3 = bookList[2].getDetail();
+        //    info4 = bookList[3].getDetail();
+           
+   
+        function conPage(num){
+            alert(info[num-1]); //num이 1부터 시작하기 때문에 -1
+        }
+        // function conPage1(){
+        //     alert(info1);
+        // }
+        // function conPage2(){
+        //     alert(info2);
+        // }
+        // function conPage3(){
+        //     alert(info3);
+        // }
+        // function conPage4(){
+        //     alert(info4);
+        // }
+        
+        function delPage(num){
+            if(confirm("정말 삭제 하시겠습니까?")){
+                var temp = document.querySelector(`.list>li:nth-child(${num})`);
+                temp.parentNode.removeChild(temp); //temp를 감싸고 있는 부모 태그의 입장에서 메소드를 실행  
+            }    
+
+            }
+       
+        
+    </script>
+   
+</body>
+</html>

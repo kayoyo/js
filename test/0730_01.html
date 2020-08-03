@@ -104,9 +104,8 @@
             if(inputCash == 0){
 
                 alert('금액을 입력 해 주세요')
-
-                location.reload();
-
+            } else if (isNaN(inputCash)) {
+                alert('금액을 다시 입력 해 주세요')
             } else  {
 
             var player1 = parseInt((Math.random()*6)+1);

@@ -15,17 +15,27 @@
             this.eng = eng;
             this.mat = mat;
 
-            //메소드
-            this.sum = function () {
-                return (this.kor + this.kor + this.mat);
-            }
-            this.avg = function () {
-                return this.sum() / 3;                
-            }
-            this.showInfo = function () {
-                return this.name + ", 총점 : " + this.sum() + ", 평균 : " + this.avg() + "<br>";
+            // //메소드
+            // this.sum = function () {
+            //     return (this.kor + this.kor + this.mat);
+            // }
+            // this.avg = function () {
+            //     return this.sum() / 3;                
+            // }
+            // this.showInfo = function () {
+            //     return this.name + ", 총점 : " + this.sum() + ", 평균 : " + this.avg() + "<br>";
                 
-            }
+            // }
+        }
+        //프로토 타입 메소드 생성
+        Student.prototype.sum = function() {
+            return (this.kor + this.kor + this.mat);
+        }
+        Sttudent.prototype.avg = function () {
+                return this.sum() / 3;  
+        }
+        Student.prototype.showInfo = function () {
+                return this.name + ", 총점 : " + this.sum() + ", 평균 : " + this.avg() + "<br>";
         }
 
         //객체 생성
@@ -40,7 +50,7 @@
         new Student('안정원', 78, 88, 98),
         ]; 
         for(var i=0; i<students.length; i++){
-            document.write("이름 : " + students[i].name + ", 총점 : " + students[i].sum() + ", 평균 : " + students[i].avg());
+            //document.write("이름 : " + students[i].name + ", 총점 : " + students[i].sum() + ", 평균 : " + students[i].avg());
             document.write(students[i].showInfo());
         }
     </script>
