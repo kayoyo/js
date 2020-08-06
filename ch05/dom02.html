@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 객체 2</title>
+    <style>
+        .container {width: 500px; margin: 0 auto;}
+        /* #img {width: 70px; height: 70px;}
+        #text1 {background-color: orange;} */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="" alt="" id="img1">
+        <p id="text1">자바스크립트</p>
+    </div>
+    <script>
+        var img = document.getElementById('img1'); // img태그의 id값을 가져옴  
+        img1.src = "image/js.png"; //이미지 삽입 
+        img1.style.width = "70px"; //이미지 너비 변경
+        img1.style.height = "70px"; //이미지 높이 변경
+
+        var text = document.getElementById('text1'); //P태그의 id 값을 가져옴
+        text1.innerHTML = "javascript" //p태그 문장의 내용 변경
+        text1.style.background = "orange" //p태그의 배경 색상 변경
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 객체 6</title>
+    <style>
+        .container {width: 500px; margin: 0 auto;}
+    </style>
+</head>
+<!--
+    1. document.createElement() : 요소 노드를 생성
+    2. document.createTextNode() : 선택한 요소에 텍스트를 생성
+    3. appendChild() : 선택한 요소 안에 자식 요소를 추가
+-->
+<body>
+    <!--★★★★★-->
+    <div class="container">
+        여행하고 싶은 지역 : <input type="text" id="tripInput">
+        <button id="btnAdd">추가</button>
+        <ul id="tripList"></ul>
+    </div>
+    <script>
+        var tripInput = document.querySelector("#tripInput"); //input
+        var btnAdd = document.querySelector("#btnAdd"); //button
+        var tripList = document.querySelector("#tripList"); //ul
+
+        btnAdd.addEventListener("click", addTripList);
+
+        function addTripList(){
+            var newTrip = document.createElement("li"); //li 노드 생성
+            var tripNode = document.createTextNode(tripInput.value); //input으로 입력 받은 텍스트 생성
+           
+            newTrip.appendChild(tripNode);  //li에 input으로 입력 받은 텍스트(tripNode) 
+            tripList.appendChild(newTrip); //ul에 li 값 
+            tripInput.value = "";
+            tripInput.focus();
+        }
+
+
+    </script>
+</body>
+</html>

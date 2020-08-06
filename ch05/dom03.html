@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 객체 3</title>
+    <style>
+        .container {width: 500px; margin: 0 auto;}
+        #light {width: 30%;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>전구 on/off</h3>
+        <hr>
+        <button id="btNon">on</button>
+        <button id="btNoff">off</button>
+        <hr>
+        <img src="image/lightoff.png" alt="" id="light">
+    </div>
+    <script>
+    
+        var btNon =document.getElementById('btNon'); 
+        btNon.addEventListener("click", changeOn);
+
+        var btNoff =document.getElementById('btNoff'); 
+        btNon.addEventListener("click", changeOff);
+
+        function changeOn() {
+            img.src="image/lighton.png";
+        }
+        function changeOff() {
+            img.src="image/lightoff.png";
+        }
+
+    </script>
+</body>
+</html>

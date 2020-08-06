@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 속성</title>
+    <style>
+        .container {width: 600px; margin: 0 auto;}
+    </style>
+    <!--1. change 이벤트 : 입력상자의 입력필드의 값이 ㅂ녀경 될 때 마다 발생하는 이벤트
+        - 라디오 버튼, 체크박스, 콤보박스(select) 입력에서 하용하면 사용자들의 입력이 발견될 때 마다 즉각적으로 처리할 수 있다
+    -->
+</head>
+<body>
+    <div class="container">
+        <h3>구매할 차종을 선택하세요</h3>
+        <select id="cars" onchange="changecar()">
+            <option value="K7">K7</option>
+            <option value="뉴그랜저">뉴그랜저</option>
+            <option value="제네시스 G80">제네시스 G80</option>
+            <option value="QM6">QM6</option>
+            <option value="펠리세이드">펠리세이드</option>
+        </select>
+            <div id="msg"></div>
+    </div>
+    <script>
+        function changecar(){
+            var choiceCar = document.getElementById('cars').value;
+            document.getElementById('msg').innerHTML=choiceCar + "을(를) 선택하셨습니다."
+        }    
+    </script>
+</body>
+</html>
