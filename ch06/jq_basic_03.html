@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .container {width: 500px; margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>전구 스위치</h3>
+        <img src="image/lightoff.png" id= "lightImg" width="30%">
+        <button id="btn">전원</button>
+    </div>
+    <script>
+        $(function(){
+            if($("#btn").html() == "on"){
+                $("#lightImg").attr("src", "image/lighton.png");
+                $("#btn").css("background", "pink")
+                $("#btn").html("off") 
+            } else {
+                $("#lightImg").attr("src", "image/lightoff.png");
+                $("#btn").css("background", "cyan")
+                $("#btn").html("on")
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탐색 선택자</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {margin: 10px;}
+    </style>
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용0</li>
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+        <li>내용5</li>
+        <li>내용6</li>
+        <li>내용7</li>
+        <li>내용8</li>
+        <li>내용9</li>
+    </ul>
+    <ul type="circle">
+        <li>content0</li>
+        <li>content1</li>
+        <li>content2</li>
+        <li>content3</li>
+        <li>content4</li>
+    </ul>
+    <script>
+        $(function() {
+            // 1. first/last 선택자
+            // $("#menu li:first").css("background", "yellow");
+            // $("#menu li:last").css("background", "cyan");
+
+            // 2. first/last 선택자 - 함수, first()/last() 만 가능
+            // $("#menu li").first().css("background", "yellow");
+            // $("#menu li").last().css("background", "cyan");
+
+            // 3. even/odd 선택자 - 인덱스를 기준
+            // $("#menu li:even").css("background", "yellow");
+            // $("#menu li:odd").css("background", "cyan");
+
+            //4. eq(), lt(), gt() 선택자 - 인덱스를 기준
+            // $("#menu li:eq(2)").css("background", "orange");//2번 선택
+            // $("#menu li:lt(2)").css("background", "green");//2번 보다 작은 것을 선택(2번 포함X)
+            // $("#menu li:gt(5)").css("background", "purple");//5번 보다 큰 것을 선택(5번 포함X)
+           
+            //5. first-of-type / last-of-type
+           
+            //li중에서 첫번째, 마지막 요소에 적용
+            // $("li:first").css("border", "4px solid black");
+            // $("li:last").css("border", "4px solid black");
+           
+            //li그룹 중에서 첫번째, 마지막 요소에 적용
+            // $("li:first-of-type").css("border", "4px solid gray");
+            // $("li:last-of-type").css("border", "4px solid gray");
+            
+            //6. nth-child(), nth-child(n)
+            //$("li:nth-child(5)").css("background", "pink");//5번째 선택
+            //$("li:nth-child(3n)").css("background", "pink");//3의 배수
+            $("li:nth-last-of-type(3)").css("background", "pink");
+        });
+    </script>
+</body>
+</html>
