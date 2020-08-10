@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eq와 is메소드</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style> 
+    .container {width: 600px; margin: 0 auto;}
+    .accent {display: none;}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div id="outer_wrap">
+            <h1>is()</h1>
+            <section id="inner_1">
+            <h1>문단 태그 영역</h1>
+            <p>내용 1</p>
+            <p class="accent">내용 2</p>
+            </section>
+            <section id="inner_2">
+                <h2>폼 태그 영역</h2>
+                <p>
+                <input type="checkbox" name="chk1" id="chk1" checked> 
+                <!-- checked : 선택된 상태로 만듬 -->
+                <label for="ch1">체크1</label>
+                <input type="checkbox" name="chk2" id="chk2">
+                <label for="ch2">체크2</label>
+                </p>
+                </section>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            //1. 속성에 대해 참 거짓을 확인 하는 메소드
+            var result_1 = $("#inner_1 p").eq(0).is(":visible");
+            var result_2 = $("#inner_1 p").eq(1).is(":visible");
+
+            var result_3 = $("#chk1").is(":checked");
+            var result_4 = $("#chk2").is(":checked");
+        });
+    </script>
+</body>
+</html>
