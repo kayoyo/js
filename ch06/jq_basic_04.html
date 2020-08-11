@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .container {width: 600px; margin: 0 auto;}
+        p {background-color: lightblue; width: 100px; height: 30px; margin-left: 10px; text-align: center;}
+        .current {background-color: lightskyblue;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>jquery programming</h3>
+        <p id="p1">HTML5/CSS</p>
+        <p id="p2">JAVASCRIPT</p>
+        <p id="p3">JQUERY</p>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("p").mouseenter(function(){
+                $(this).addClass("current")
+            })
+            $("p").mouseleave(function(){
+                $(this).removeClass("current")
+            })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event함수</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .container {width: 500px; margin: 0 auto;}
+        #btn1 {margin-right: 10px;}
+    </style>
+</head>
+<!-- JQuery에서 event()를 사용하는 방법
+    1. on(), off()
+    (1) on () : 이벤트 설정 함수
+    (2) off() : 이벤트 제거 함수
+
+    2. 이벤트 전용 함수
+    - click(), dbclick(), mouseenter(), mouseleave(), mouseover(), mouseout(), hover(), keydown(), keyup(), keypress()
+--> 
+<body>
+    <div class="container">
+        <h3 id="title">제이쿼리 프로그래밍</h3>
+        <button id="btn1">내용 변경</button>
+        <button id="btn2">스타일 변경</button>
+    </div>
+    <script>
+        //1. on(함수호출)  
+        $(document).ready(function(){
+            $("#btn1").on("click", f1);
+            $("#btn2").on("click", f2);  
+            function f1(){
+                $("#title").html("제이쿼리 이벤트 함수");
+            }
+            function f2(){
+                $("#title").css({
+                    "backgroundColor" : "purple", "color" : "white", "padding" : "20px"
+                })
+            }
+        });
+        
+        // //2. on(익명함수)  
+        // $(document).ready(function(){
+        //     $("#btn1").on("click", function(){
+        //         $("#title").html("제이쿼리 이벤트 함수");
+        //     });
+        //     $("#btn2").on("click", function(){
+        //         $("#title").css({
+        //             "backgroundColor" : "purple", "color" : "white", "padding" : "20px"
+        //     });     
+        // });
+
+        // //3. on() 없는 이벤트 함수
+        // $(document).ready(function(){
+        //     $("#btn1").click(f1);
+        //     $("#btn2").click(f2);  
+        //     function f1(){
+        //         $("#title").html("제이쿼리 이벤트 함수");
+        //     }
+        //     function f2(){
+        //         $("#title").css({
+        //             "backgroundColor" : "purple", "color" : "white", "padding" : "20px"
+        //         })
+        //     }
+        // });    
+    </script>
+</body>
+</html>
