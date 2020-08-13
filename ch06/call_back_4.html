@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        // function forEach(arr, fn) {
+        //  for(var i=0; i<arr.length; i++){
+        //      var item = arr[i]
+        //      fn(item)
+        //  }   
+        // }
+        // var arr = [1, 2, 3]
+        // forEach(arr, function(item){
+        //     console.log('arr :' + item)
+        // })
+
+        // function call_back(a, b, fn) {
+        //     var result = a+b
+        //     fn(result)
+        // }
+        
+        // call_back(4, 5, function(result){
+        //     console.log(result)
+        // })
+
+        function first(a, b, callBack){
+            var result = a*b
+            callBack(result)
+        }
+        first(4, 5, function(result){
+            console.log(result)
+        })
+
+
+
+    </script>
+</body>
+</html>

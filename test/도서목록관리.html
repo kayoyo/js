@@ -91,14 +91,15 @@
             var volume = document.querySelector("#volume").value;
             var price = document.querySelector("#price").value;
 
-            // 준비물을 입력했을 때
+            // 책정보를 입력했을 때
             itemList.push(new Book(title, author, volume, price));
+            
             document.querySelector("#title").value = "";
             document.querySelector("#author").value = "";
             document.querySelector("#volume").value = "";
             document.querySelector("#price").value = "";
-            document.querySelector("#title").focus();
-            event.preventDefault();
+           //document.querySelector("#title").focus();
+            event.preventDefault(); //클릭 이벤트 외에 브라우저 액션 막기
             showList();
         }
 

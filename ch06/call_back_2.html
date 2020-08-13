@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         Array.prototype.arr = [] //Array이 라는 객체에 있는 prototype이라는 변수를 추가함(객체명.prototype.변수명) 
+         Array.prototype.forEach2 = function(fn) {
+             for(var i=0; i<this.arr.length; i++){
+                 var item = this.arr[i]
+                 fn(item)
+             }
+         }
+
+        var objArr = new Array()
+        objArr.arr = ['A', 'B', 'C']
+        
+        objArr.forEach2(function(a){
+            alert(a)
+        })
+        
+
+
+    </script>
+</body>
+</html>
