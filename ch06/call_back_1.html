@@ -10,21 +10,48 @@
         .btn:not(:last-child){ margin-right: 10px;}
         .btn {margin-bottom: 10px; width: 70px; height: 40px; font-size: 20px;}
         #_selectId {margin-left: 10px; width: 50px; height: 30px;}
+      
         
         
     </style>
 </head>
 <body>
+    선택 좌석 <input type="hidden3" id="allSeatCnt" value="0"> 
     <div id="memberContainer"></div>
     <div id="seatsContainer"></div>
     <script>
+        var selectedSeats = [] //배열
+
+        function switchSeat(seat){
+            var idx = selectedSeats.indexOf(seat)
+
+            if(idx == -1 ){ //좌석이 선택 안되어 있음
+                if(selectedSeats.length < allSeatCnt.value) { //value 내가 선택할 수 있는 좌석, length는 이미 선택 해 놓은 좌석 
+                selectedSeats.push(seat) //좌석추가
+                } else {
+                    alert('좌석을 다시 선택 해 주세요');
+                }                
+            } else { //좌석이 선택이 됨
+                selectedSeats.splice(idx, 1) 
+            }
+               
+            console.log('selectedSeats : ' + selectedSeats)
+        } 
+
+        function upSeatCnt(){
+            allSeatCnt.value = Number(sel_adult_member_cnt.value) + Number(sel_teen_member_cnt.value)
+        }
+
         function makeSelect(_title, _selectId){
+            
             var label_adult = document.createElement('label')
             label_adult.setAttribute('class', 'label')
             var span_adult = document.createElement('span')
             span_adult.innerHTML = `${_title}`
             var select_adult = document.createElement('select')
-            select_adult.id = '_selectId'
+            select_adult.id = _selectId;
+            //select_adult.setAttribute('onchange', 'upSeatCnt()')
+            select_adult.addEventListener('change', upSeatCnt)
             for(var i=0; i<=5; i++){
                 var opt = document.createElement('option')
                 opt.value = i
@@ -35,21 +62,33 @@
             label_adult.appendChild(select_adult)
             return label_adult
         }
+
         function makeSeatBtn(arr, colCnt){
-            var div_seat_all = document.createElement('div')
-            for(var i=0; i<arr.length; i++){
-                var div_seat_section = document.createElement('div') 
-                for(var z=0; z<colCnt; z++){
+            // var div_seat_all = document.createElement('div')
+            // for(var i=0; i<arr.length; i++){
+            //     var div_seat_section = document.createElement('div') 
+            //     for(var z=0; z<colCnt; z++){
+            //     var seat_btn= document.createElement('button')
+            //         seat_btn.setAttribute('class', 'btn')
+
+                var div_seat_all = document.createElement('div')
+                arr.forEach(function(item){
+                    var div_seat_section = document.createElement('div')
+                    for(var i=1; i<=colCnt; i++){
                 var seat_btn= document.createElement('button')
                     seat_btn.setAttribute('class', 'btn')
-                    seat_btn.innerHTML= (arr[i] + (z+1)) 
+                    
+                    let txt = `${item}${i}`
+                    seat_btn.setAttribute('onclick', `switchSeat('${txt}')`)
+                    seat_btn.innerHTML= `${item}${i}`
                     div_seat_section.appendChild(seat_btn)
-                }
-                div_seat_all.appendChild(div_seat_section)
-            } 
+                    }
+                    div_seat_all.appendChild(div_seat_section)
+                });
 
-            return div_seat_all
-        }
+                    return div_seat_all
+                }
+            
 
         // function makeSeatBtn(arr, colCnt){
         //     var div_seat_all = document.createElement('div')
